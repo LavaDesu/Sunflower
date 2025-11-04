@@ -7,6 +7,7 @@ junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 appcompat = "1.7.1"
 material = "1.13.0"
+mavenPublish = "0.34.0"
 rust = "0.9.6"
 lifecycleRuntimeKtx = "2.9.4"
 activityCompose = "1.11.0"
@@ -33,8 +34,9 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-annotation-jvm = { group = "androidx.annotation", name = "annotation-jvm", version.ref = "annotationJvm" }
 
 [plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-rust-android = { id = "org.mozilla.rust-android-gradle.rust-android", version.ref = "rust" }
-android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
+rust-android = { id = "org.mozilla.rust-android-gradle.rust-android", version.ref = "rust" }
