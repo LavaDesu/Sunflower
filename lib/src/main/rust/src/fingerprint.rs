@@ -1,36 +1,4 @@
-use davey::errors::{DisplayableCodeError, GenerateKeyFingerprintError, GeneratePairwiseFingerprintError, GetPairwiseFingerprintError};
-use scrypt::errors::InvalidOutputLen;
-
-#[uniffi::remote(Enum)]
-pub enum GenerateKeyFingerprintError {
-    UnsupportedFormatVersion,
-    KeyIsEmpty,
-}
-
-#[uniffi::remote(Record)]
-pub struct InvalidOutputLen;
-
-#[uniffi::remote(Enum)]
-pub enum DisplayableCodeError {
-  DataLessThanDesiredLength,
-  DesiredLengthNotMultipleOfGroupSize,
-  GroupSizeGreaterThanMaxGroupSize,
-  OutOfBoundsDataIndex,
-}
-
-#[uniffi::remote(Enum)]
-pub enum GeneratePairwiseFingerprintError {
-    GenerateKeyFingerprint(#[from] GenerateKeyFingerprintError),
-    HashingFailed(InvalidOutputLen),
-}
-
-#[uniffi::remote(Enum)]
-pub enum GetPairwiseFingerprintError {
-    NoEstablishedGroup,
-    UserNotInGroup,
-    GeneratingPairwiseFingerprint(#[from] GeneratePairwiseFingerprintError),
-    GeneratingKeyFingerprint(#[from] GenerateKeyFingerprintError),
-}
+use davey::errors::{DisplayableCodeError, GenerateKeyFingerprintError, GeneratePairwiseFingerprintError};
 
 /// Generate a key fingerprint.
 /// @see https://daveprotocol.com/#verification-fingerprint

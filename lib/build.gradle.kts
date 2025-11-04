@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "moe.lava.sunflower"
+    namespace = "uniffi.sunflower"
     compileSdk = 36
     ndkVersion = "29.0.14206865"
 
@@ -70,6 +70,7 @@ cargo {
 
 dependencies {
     api("net.java.dev.jna:jna:5.18.1@aar")
+    implementation(libs.androidx.annotation.jvm)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

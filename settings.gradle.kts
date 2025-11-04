@@ -20,5 +20,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Sunflower"
-include(":Sunflower")
+include(":lib")
 include(":sample")

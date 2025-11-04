@@ -1,0 +1,4 @@
+[bindings.kotlin]
+package_name = "moe.lava.sunflower"
+generate_immutable_records = true
+android = true
